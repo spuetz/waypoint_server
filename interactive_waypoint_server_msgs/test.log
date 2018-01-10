@@ -1,0 +1,202 @@
+
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+chdir(/usr/share/nvim)
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+could not source "$VIM/sysinit.vim"
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+chdir(/home/figelbrink/.config/nvim)
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+sourcing "/home/figelbrink/.config/nvim/init.vim"
+Searching for "ftoff.vim" in "/home/figelbrink/.config/nvim,/etc/xdg/nvim,/home/figelbrink/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/bedrock/brpath/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/bedrock/brpath/nvim/site,/usr/share/nvim/runtime,/bedrock/brpath/nvim/site/after,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/bedrock/brpath/nvim/site/after,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/home/figelbrink/.local/share/nvim/site/after,/etc/xdg/nvim/after,/home/figelbrink/.config/nvim/after,/home/figelbrink/.config/nvim/plugins/repos/github.com/Shougo/dein.vim,/home/figelbrink/.config/nvim/plugins/repos/github.com/w0rp/ale"
+Searching for "/home/figelbrink/.config/nvim/ftoff.vim"
+Searching for "/etc/xdg/nvim/ftoff.vim"
+Searching for "/home/figelbrink/.local/share/nvim/site/ftoff.vim"
+Searching for "/usr/local/share/nvim/site/ftoff.vim"
+Searching for "/usr/share/nvim/site/ftoff.vim"
+Searching for "/bedrock/brpath/nvim/site/ftoff.vim"
+Searching for "/usr/local/share/nvim/site/ftoff.vim"
+Searching for "/usr/share/nvim/site/ftoff.vim"
+Searching for "/bedrock/brpath/nvim/site/ftoff.vim"
+Searching for "/usr/share/nvim/runtime/ftoff.vim"
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+chdir(/usr/share/nvim/runtime)
+chdir(/home/figelbrink/ros_workspaces/rosplan_kinetic_ws/src/ceres_rosplan/interactive_waypoint_server_msgs)
+line 58: sourcing "/usr/share/nvim/runtime/ftoff.vim"
+Error detected while processing /usr/share/nvim/runtime/ftoff.vim:
+line   11:
+E216: No such group or event: filetypedetect *
+finished sourcing /usr/share/nvim/runtime/ftoff.vim
+continuing in /home/figelbrink/.config/nvim/init.vim
+Searching for "/bedrock/brpath/nvim/site/after/ftoff.vim"
+Searching for "/usr/share/nvim/site/after/ftoff.vim"
+Searching for "/usr/local/share/nvim/site/after/ftoff.vim"
+Searching for "/bedrock/brpath/nvim/site/after/ftoff.vim"
+Searching for "/usr/share/nvim/site/after/ftoff.vim"
+Searching for "/usr/local/share/nvim/site/after/ftoff.vim"
+Searching for "/home/figelbrink/.local/share/nvim/site/after/ftoff.vim"
+Searching for "/etc/xdg/nvim/after/ftoff.vim"
+Searching for "/home/figelbrink/.config/nvim/after/ftoff.vim"
+Searching for "/home/figelbrink/.config/nvim/plugins/repos/github.com/Shougo/dein.vim/ftoff.vim"
+Searching for "/home/figelbrink/.config/nvim/plugins/repos/github.com/w0rp/ale/ftoff.vim"
+--- Auto-Commands ---
+dein  FileType
+    *?        call dein#autoload#_on_default_event('FileType')
+filetypeplugin  FileType
+    *         call s:LoadFTPlugin()
+filetypeindent  FileType
+    *         call s:LoadIndent()
+--- Auto-Commands ---
+dein  FileType
+    *?        call dein#autoload#_on_default_event('FileType')
+filetypeplugin  FileType
+    *         call s:LoadFTPlugin()
+filetypeindent  FileType
+    *         call s:LoadIndent()
+SignColumn     xxx ctermfg=8 ctermbg=10 guifg=#545862 guibg=#353b45
+                   links to LineNr
+LineNr         xxx ctermfg=8 ctermbg=10 guifg=#545862 guibg=#353b45
+--- Auto-Commands ---
+dein  FileType
+    *?        call dein#autoload#_on_default_event('FileType')
+filetypeplugin  FileType
+    *         call s:LoadFTPlugin()
+filetypeindent  FileType
+    *         call s:LoadIndent()
+nvim_edit  FileType
+    qf        wincmd J
+nvim_map  FileType
+    c         silent! unmap <Leader>ih
+    cpp       silent! unmap <Leader>ih
+    c         silent! unmap <Leader>is
+    cpp       silent! unmap <Leader>is
+    c         silent! unmap <Leader>ihn
+    cpp       silent! unmap <Leader>ihn
+nvim_format  FileType
+    js        autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    scss      autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    css       autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+              setlocal foldmethod=marker foldmarker={,}
+    scss      setlocal foldmethod=marker foldmarker={,}
+    css       nnoremap <silent> <SID>sort vi{:sort<CR>
+    scss      nnoremap <silent> <SID>sort vi{:sort<CR>
+    css       nmap <LocalLeader>s <SID>sort
+    scss      nmap <LocalLeader>s <SID>sort
+    python    autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+              setlocal foldmethod=indent
+    php       autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    coffee    autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    vim       setlocal foldmethod=indent keywordprg=:help
+syntaxset  FileType
+    *         exe "set syntax=" . expand("<amatch>")
+FileType
+    *         call TagHighlight#ReadTypes#ReadTypesByFileType()
+ALERunOnFiletypeChangeGroup  FileType
+    *         call ale#events#FileTypeEvent(   str2nr(expand('<abuf>')),   expand('<amatch>'))
+fugitive  FileType
+    netrw     call fugitive#detect(expand('%:p'))
+fugitive_blame  FileType
+    fugitiveblame
+              setlocal nomodeline | if exists('b:git_dir') | let &l:keywordprg = s:repo().keywordprg() | endif
+fugitive_files  FileType
+    git       if exists('b:git_dir') |  call s:JumpInit() | endif
+              if exists('b:git_dir') |   call s:GFInit() | endif
+    gitcommit if exists('b:git_dir') |   call s:GFInit() | endif
+    gitrebase if exists('b:git_dir') |   call s:GFInit() | endif
+_fzf_statusline  FileType
+    fzf       call s:fzf_nvim_term()
+lightline  FileType
+    *         call lightline#update()
+webdevicons_conceal_nerdtree_brackets  FileType
+    nerdtree  syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+              syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+              setlocal conceallevel=3
+              setlocal concealcursor=nvic
+youcompleteme  FileType
+    *         call s:OnFileTypeSet()
+--- Auto-Commands ---
+dein  FileType
+    *?        call dein#autoload#_on_default_event('FileType')
+filetypeplugin  FileType
+    *         call s:LoadFTPlugin()
+filetypeindent  FileType
+    *         call s:LoadIndent()
+nvim_edit  FileType
+    qf        wincmd J
+nvim_map  FileType
+    c         silent! unmap <Leader>ih
+    cpp       silent! unmap <Leader>ih
+    c         silent! unmap <Leader>is
+    cpp       silent! unmap <Leader>is
+    c         silent! unmap <Leader>ihn
+    cpp       silent! unmap <Leader>ihn
+nvim_format  FileType
+    js        autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    scss      autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    css       autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+              setlocal foldmethod=marker foldmarker={,}
+    scss      setlocal foldmethod=marker foldmarker={,}
+    css       nnoremap <silent> <SID>sort vi{:sort<CR>
+    scss      nnoremap <silent> <SID>sort vi{:sort<CR>
+    css       nmap <LocalLeader>s <SID>sort
+    scss      nmap <LocalLeader>s <SID>sort
+    python    autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+              setlocal foldmethod=indent
+    php       autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    coffee    autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    vim       setlocal foldmethod=indent keywordprg=:help
+syntaxset  FileType
+    *         exe "set syntax=" . expand("<amatch>")
+FileType
+    *         call TagHighlight#ReadTypes#ReadTypesByFileType()
+ALERunOnFiletypeChangeGroup  FileType
+    *         call ale#events#FileTypeEvent(   str2nr(expand('<abuf>')),   expand('<amatch>'))
+fugitive  FileType
+    netrw     call fugitive#detect(expand('%:p'))
+fugitive_blame  FileType
+    fugitiveblame
+              setlocal nomodeline | if exists('b:git_dir') | let &l:keywordprg = s:repo().keywordprg() | endif
+fugitive_files  FileType
+    git       if exists('b:git_dir') |  call s:JumpInit() | endif
+              if exists('b:git_dir') |   call s:GFInit() | endif
+    gitcommit if exists('b:git_dir') |   call s:GFInit() | endif
+    gitrebase if exists('b:git_dir') |   call s:GFInit() | endif
+_fzf_statusline  FileType
+    fzf       call s:fzf_nvim_term()
+lightline  FileType
+    *         call lightline#update()
+webdevicons_conceal_nerdtree_brackets  FileType
+    nerdtree  syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
+              syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+              setlocal conceallevel=3
+              setlocal concealcursor=nvic
+youcompleteme  FileType
+    *         call s:OnFileTypeSet()
+filetype detection:ON  plugin:ON  indent:ON
+--- Syntax items ---
+StartifyNumber xxx match /^\s*\[\zs[^BSVT]\{-}\ze\]/  
+                   links to Number
+StartifySelect xxx match /^\s*\[\zs[BSVT]\{-}\ze\]/  
+                   links to Title
+StartifyBracket xxx match /.*\%9c/  contains=StartifyNumber,StartifySelect 
+                   links to Delimiter
+StartifySpecial xxx match /\V<empty buffer>\|<quit>/  
+                   links to Comment
+StartifyVar    xxx match =\$[^\/]\+=  
+                   links to StartifyPath
+StartifyPath   xxx match +\%9c.*\/+  contains=StartifySlash,StartifyVar 
+                   links to Directory
+StartifyFile   xxx match /.*/  contains=StartifyBracket,StartifyPath,StartifySpecial 
+                   links to Identifier
+StartifySlash  xxx match +\/+  
+                   links to Delimiter
+StartifyHeader xxx start=/\%1l/ end=/\%4l/  
+                   links to Title
+StartifyFooter xxx start=/\%33l/ end=/*/  
+                   links to Title
+StartifySection xxx start=/\%5l/ end=/$/  
+                   start=/\%6l/ end=/$/  
+                   start=/\%7l/ end=/$/  
+                   start=/\%18l/ end=/$/  
+                   start=/\%19l/ end=/$/  
+                   start=/\%20l/ end=/$/  
+                   links to Statement
