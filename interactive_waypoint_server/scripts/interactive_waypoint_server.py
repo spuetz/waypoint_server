@@ -10,7 +10,6 @@ from diagnostic_msgs.msg import KeyValue
 from visualization_msgs.msg import *
 from geometry_msgs.msg import PointStamped, PoseStamped, Point
 from networkx import Graph
-from mongodb_store import message_store
 import math
 import yaml
 
