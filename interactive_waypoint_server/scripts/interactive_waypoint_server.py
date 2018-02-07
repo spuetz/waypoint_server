@@ -187,7 +187,6 @@ class InteractiveWaypointServer(object):
         int_marker.header.frame_id = frame_id
         int_marker.pose.position = position
         int_marker.pose.orientation.w = 1
-        int_marker.pose.orientation.z = 1
         int_marker.scale = 0.5
 
         int_marker.name = name
