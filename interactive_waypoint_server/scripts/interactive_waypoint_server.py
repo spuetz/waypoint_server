@@ -122,12 +122,14 @@ class InteractiveWaypointServer(object):
             self.updateEdges()
 
     def updateEdges(self):
+        rospy.loginfo("updateEdges")
         edges = MarkerArray()
-        for u,v,data in self.waypoint_graph.edges_iter(data=True):
+        for u,v,data in self.waypoint_graph.edges(data=True):
             edges.markers.append(data["marker"])
         self.edge_line_publisher.publish(edges)
 
     def processFeedback(self, feedback):
+        rospy.loginfo("Connect...")
 
         if feedback.event_type == InteractiveMarkerFeedback.MENU_SELECT:
             handle = feedback.menu_entry_id
@@ -178,6 +180,7 @@ class InteractiveWaypointServer(object):
 
     def insertMarker(self, position, name=None, frame_id="map"):
 
+        rospy.loginfo("Insert Marker!...")
         if name is None:
             name = "wp{0}".format(self.next_waypoint_id)
         self.next_waypoint_id += 1
@@ -221,6 +224,7 @@ class InteractiveWaypointServer(object):
 
         # insert into graph
         self.waypoint_graph.add_node(int_marker.name)
+        rospy.loginfo(self.waypoint_graph.nodes())
 
     def saveWaypointsServicecall(self, request):
         filename = request.file_name
@@ -230,10 +234,10 @@ class InteractiveWaypointServer(object):
 
     def _saveWaypointsToFile(self, filename):
         data = {"waypoints": {}, "edges": []}
-        for node in self.waypoint_graph.nodes_iter():
+        for node in self.waypoint_graph.nodes():
             pos = self.server.get(node).pose.position
             data["waypoints"].update({node : {"x": pos.x, "y": pos.y, "z" : pos.z}})
-        for u,v in self.waypoint_graph.edges_iter():
+        for u,v in self.waypoint_graph.edges():
             data["edges"].append([u,v])
 
         with open(filename, 'w') as f:
@@ -269,12 +273,12 @@ class InteractiveWaypointServer(object):
         else:
             graph = self.waypoint_graph.subgraph(request.waypoints)
 
-        for node in graph.nodes_iter():
+        for node in graph.nodes():
             pose = self.server.get(node).pose
             ret.names.append(node)
             ret.positions.append(pose)
 
-        for u,v in graph.edges_iter():
+        for u,v in graph.edges():
             e = Edge()
             e.source = u
             e.target = v
