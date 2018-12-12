@@ -69,7 +69,6 @@ class WaypointServer:
         self.insert_marker(pos.point)
 
     def clear_all_markers(self):
-        self.waypoint_graph.clear()
         edges = MarkerArray()
         marker = Marker()
         marker.header.stamp = rospy.Time.now()
@@ -79,6 +78,7 @@ class WaypointServer:
         marker.action = Marker.DELETEALL
         edges.markers.append(marker)
         self.edge_line_publisher.publish(edges)
+        self.waypoint_graph.clear()
 
     def _make_marker(self, msg):
         marker = Marker()
@@ -123,8 +123,7 @@ class WaypointServer:
         # remove all edges to a waypoint
         edges = MarkerArray()
         to_remove = []
-        for u, v, data in self.waypoint_graph.edges(name, data=True):
-            marker = data["marker"]
+        for u, v, marker in self.waypoint_graph.edges(name, data='marker'):
             marker.action = Marker.DELETE
             to_remove.append((u, v, marker))
 
@@ -289,6 +288,7 @@ class WaypointServer:
 
     def load_waypoints_from_file(self, filename):
         self.clear_all_markers()
+        self.server.clear()
         with open(filename, 'r') as f:
             data = yaml.load(f)
 
