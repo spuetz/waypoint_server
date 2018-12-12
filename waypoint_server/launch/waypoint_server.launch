@@ -1,0 +1,14 @@
+<launch>
+  <arg name="mapserver" default="true" />
+  <arg name="rviz" default="true" />
+
+  <!-- Map Server -->
+  <include if="$(arg mapserver)" file="$(find ceres_navigation)/launch/map_server.launch" />
+
+  <!-- Waypoint Server for interactive waypoints in rviz -->
+  <!-- node pkg="waypoint_server" type="waypoint_server.py" name="waypoint_server" output="screen" / -->
+ 
+  <!-- RViz with config -->
+  <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find ceres_navigation)/rviz/waypoints.rviz" />
+
+</launch>

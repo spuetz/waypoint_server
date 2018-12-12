@@ -1,5 +1,0 @@
-string[] waypoints
----
-string[] names
-Edge[] edges
-geometry_msgs/Pose[] positions
