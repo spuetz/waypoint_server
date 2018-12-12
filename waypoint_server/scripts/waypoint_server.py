@@ -69,6 +69,7 @@ class WaypointServer:
         self.insert_marker(pos.point)
 
     def clear_all_markers(self):
+        self.waypoint_graph.clear()
         edges = MarkerArray()
         marker = Marker()
         marker.header.stamp = rospy.Time.now()
@@ -264,13 +265,13 @@ class WaypointServer:
 
     def save_waypoints_service(self, request):
         filename = request.file_name
-        self._save_waypoints_to_file(filename)
+        self.save_waypoints_to_file(filename)
         rospy.loginfo("Saved waypoints to {0}".format(filename))
         return SaveWaypointsResponse()
     
     def load_waypoints_service(self, request):
         filename = request.file_name
-        self._load_waypoints_from_file(filename)
+        self.load_waypoints_from_file(filename)
         rospy.loginfo("Loaded waypoints from {0}".format(filename))
         return LoadWaypointsResponse()
 
@@ -278,7 +279,7 @@ class WaypointServer:
         data = {"waypoints": {}, "edges": []}
         for uuid in self.waypoint_graph.nodes():
             name = self.uuid_name_map[uuid]
-            pos = self.server.get(name).pose.position
+            pos = self.server.get(uuid).pose.position
             data["waypoints"].update({uuid: {"name": name, "x": pos.x, "y": pos.y, "z": pos.z}})
         for u, v, cost in self.waypoint_graph.edges(data='cost'):
             data["edges"].append({'u': u, 'v': v, 'cost': cost})
@@ -287,6 +288,7 @@ class WaypointServer:
             yaml.dump(data, f, default_flow_style=False)
 
     def load_waypoints_from_file(self, filename):
+        self.clear_all_markers()
         with open(filename, 'r') as f:
             data = yaml.load(f)
 
